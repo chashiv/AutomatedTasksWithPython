@@ -7,8 +7,8 @@
 
 import requests
 urlAddress = input("Enter the URL : ") # Get the URL
-res = requests.get(urlAddress)
 try:
+	res = requests.get(urlAddress)
 	res.raise_for_status() # Check for the status
 	# Open/Create the file, write in binary mode
 	backupFile = open("backup.txt", 'wb') 
@@ -16,4 +16,4 @@ try:
 		backupFile.write(chunks)
 	backupFile.close() # Close the file
 except Exception as err:
-	print("Oops!! " + str(err))
+	print("Oops!!, you entered a wrong URL " )
